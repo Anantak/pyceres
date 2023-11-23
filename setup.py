@@ -39,6 +39,9 @@ class CMakeBuild(build_ext):
             '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + extdir,
             '-DPYTHON_EXECUTABLE=' + sys.executable,
             '-DVERSION_INFO={}'.format(self.distribution.get_version()),
+            '-DCMAKE_INSTALL_PREFIX=/home/ubuntu/Anantak/Pipelines/install/pyceres',
+            '-DCOLMAP_DIR=/home/ubuntu/Anantak/Pipelines/install/colmap/share/colmap',
+            '-DCeres_DIR=/home/ubuntu/Anantak/Pipelines/install/ceres-solver/lib/cmake/Ceres'
         ]
         eigen_dir = os.environ.get('EIGEN3_INCLUDE_DIRS')
         if eigen_dir is not None:
